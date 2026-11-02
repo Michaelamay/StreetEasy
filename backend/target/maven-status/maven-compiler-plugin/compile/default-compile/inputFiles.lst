@@ -1,0 +1,12 @@
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/exception/ValidationException.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/model/Listing.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/model/ScoredListing.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/exception/GlobalExceptionHandler.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/ListingsApplication.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/repository/JsonListingRepository.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/repository/ListingRepository.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/controller/ListingController.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/model/SearchResponse.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/model/SearchRequest.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/service/ListingService.java
+/Users/michaeljonathanamay/Desktop/StreetEasy/backend/src/main/java/com/streeteasy/listings/service/ScoringService.java
