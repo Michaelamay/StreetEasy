@@ -3,7 +3,7 @@ import { searchListings } from './api/listings';
 import ListingCard from './components/ListingCard';
 import Pagination from './components/Pagination';
 import SearchForm from './components/SearchForm';
-import { SearchParams, SearchResponse } from './types';
+import type { SearchParams, SearchResponse } from './types';
 
 const PAGE_SIZE = 5;
 

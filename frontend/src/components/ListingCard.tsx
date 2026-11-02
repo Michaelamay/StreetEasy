@@ -1,4 +1,4 @@
-import { ScoredListing } from '../types';
+import type { ScoredListing } from '../types';
 
 interface Props {
   item: ScoredListing;

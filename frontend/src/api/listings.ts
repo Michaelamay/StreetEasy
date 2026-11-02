@@ -1,4 +1,4 @@
-import { SearchParams, SearchResponse } from '../types';
+import type { SearchParams, SearchResponse } from '../types';
 
 export async function searchListings(params: SearchParams): Promise<SearchResponse> {
   const query = new URLSearchParams();

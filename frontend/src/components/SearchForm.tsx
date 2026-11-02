@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { SearchParams } from '../types';
+import type { SearchParams } from '../types';
 
 interface Props {
   onSearch: (params: Omit<SearchParams, 'page' | 'pageSize'>) => void;
