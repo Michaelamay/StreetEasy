@@ -40,8 +40,30 @@ export default function App() {
 
   return (
     <div style={{ maxWidth: '800px', margin: '0 auto', padding: '16px' }}>
-      <h1>Listing Search</h1>
-      <SearchForm onSearch={handleSearch} loading={loading} />
+      <div style={{
+        position: 'relative',
+        backgroundImage: 'url(/aerial-view-houses.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        borderRadius: '8px',
+        minHeight: '75vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '40px 24px',
+        marginBottom: '24px',
+      }}>
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.45)',
+          borderRadius: '8px',
+        }} />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <h1 style={{ textAlign: 'center', color: '#fff', marginBottom: '24px' }}>Listing Search</h1>
+          <SearchForm onSearch={handleSearch} loading={loading} />
+        </div>
+      </div>
 
       {error && (
         <div style={{ marginTop: '16px', padding: '12px', background: '#fee', border: '1px solid #c00', borderRadius: '4px', color: '#c00' }}>

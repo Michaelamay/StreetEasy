@@ -20,7 +20,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end' }}>
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', alignItems: 'flex-end', color: '#fff' }}>
       <label>
         Min Price
         <input type="number" value={minPrice} onChange={e => setMinPrice(e.target.value)} placeholder="e.g. 300000" />
