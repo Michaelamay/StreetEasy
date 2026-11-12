@@ -1,5 +1,7 @@
 import type { SearchParams, SearchResponse } from '../types';
 
+const API_BASE = import.meta.env.VITE_API_URL || '';
+
 export async function searchListings(params: SearchParams): Promise<SearchResponse> {
   const query = new URLSearchParams();
 
@@ -12,7 +14,7 @@ export async function searchListings(params: SearchParams): Promise<SearchRespon
   query.set('page', String(params.page));
   query.set('pageSize', String(params.pageSize));
 
-  const response = await fetch(`/api/listings/search?${query.toString()}`);
+  const response = await fetch(`${API_BASE}/api/listings/search?${query.toString()}`);
 
   if (!response.ok) {
     const body = await response.json().catch(() => null);
@@ -23,7 +25,7 @@ export async function searchListings(params: SearchParams): Promise<SearchRespon
 }
 
 export async function fetchCities(): Promise<string[]> {
-  const response = await fetch('/api/listings/cities');
+  const response = await fetch(`${API_BASE}/api/listings/cities`);
   if (!response.ok) {
     throw new Error('Failed to load cities');
   }
