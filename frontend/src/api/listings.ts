@@ -21,3 +21,11 @@ export async function searchListings(params: SearchParams): Promise<SearchRespon
 
   return response.json();
 }
+
+export async function fetchCities(): Promise<string[]> {
+  const response = await fetch('/api/listings/cities');
+  if (!response.ok) {
+    throw new Error('Failed to load cities');
+  }
+  return response.json();
+}

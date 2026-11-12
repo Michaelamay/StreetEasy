@@ -1,4 +1,5 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
+import { fetchCities } from '../api/listings';
 import type { SearchParams } from '../types';
 
 interface Props {
@@ -13,6 +14,11 @@ export default function SearchForm({ onSearch, loading }: Props) {
   const [city, setCity] = useState('');
   const [keyword, setKeyword] = useState('');
   const [targetBudget, setTargetBudget] = useState('');
+  const [cities, setCities] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetchCities().then(setCities).catch(() => {});
+  }, []);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -35,7 +41,12 @@ export default function SearchForm({ onSearch, loading }: Props) {
       </label>
       <label>
         City
-        <input type="text" value={city} onChange={e => setCity(e.target.value)} placeholder="e.g. Springfield" />
+        <select value={city} onChange={e => setCity(e.target.value)}>
+          <option value="">All Cities</option>
+          {cities.map(c => (
+            <option key={c} value={c}>{c}</option>
+          ))}
+        </select>
       </label>
       <label>
         Keyword

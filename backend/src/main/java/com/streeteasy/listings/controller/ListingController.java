@@ -2,8 +2,11 @@ package com.streeteasy.listings.controller;
 
 import com.streeteasy.listings.model.SearchRequest;
 import com.streeteasy.listings.model.SearchResponse;
+import com.streeteasy.listings.repository.ListingRepository;
 import com.streeteasy.listings.service.ListingService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/listings")
@@ -11,9 +14,20 @@ import org.springframework.web.bind.annotation.*;
 public class ListingController {
 
     private final ListingService listingService;
+    private final ListingRepository listingRepository;
 
-    public ListingController(ListingService listingService) {
+    public ListingController(ListingService listingService, ListingRepository listingRepository) {
         this.listingService = listingService;
+        this.listingRepository = listingRepository;
+    }
+
+    @GetMapping("/cities")
+    public List<String> getCities() {
+        return listingRepository.findAll().stream()
+                .map(l -> l.getCity())
+                .distinct()
+                .sorted()
+                .toList();
     }
 
     @GetMapping("/search")
